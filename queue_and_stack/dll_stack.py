@@ -1,6 +1,8 @@
 import sys
+
 sys.path.append('../doubly_linked_list')
 from doubly_linked_list import DoublyLinkedList
+
 
 class Stack:
     def __init__(self):
@@ -10,10 +12,11 @@ class Stack:
 
     def push(self, value):
         self.storage.add_to_tail(self, value)
+        self.size += 1
 
     def pop(self):
         self.storage.remove_from_tail()
+        self.size -= 1
 
     def len(self):
-        self.storage.get_max(self)
-
+        return self.size
